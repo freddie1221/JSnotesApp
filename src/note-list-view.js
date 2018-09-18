@@ -1,15 +1,18 @@
 function NoteListView(list) {
   this.list = list
-  this.output = ""
-
 }
 
-  NoteListView.prototype.DislayNotes = function() {
-    var notesArray = this.list.notes // => [noteObject, noteObject]
-    for (i = 0 ; i = noteArray.length-1; i++) {
-      return
-    }
+NoteListView.prototype.DislayNotes = function() {
+  var noteArray = this.list.notes // => [noteObject, noteObject]
+  var output = "<ul>"
+  
+  for (var i = 0; i < noteArray.length; i++) {
+    output += "<li><div>" + noteArray[i].text + "</div></li>"
   }
+  output += "</ul>"
+  return output
+}
+  
 
 
 
