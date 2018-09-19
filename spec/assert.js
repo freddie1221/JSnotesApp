@@ -3,8 +3,16 @@ var assert = {
     if (!assertionToCheck) {
       throw new Error("Assertion failed: " + assertionToCheck + " is not truthy");
     }
-     else {
+    else {
       console.log('Test pass!')
     }
   }
 };
+
+
+function Assert(){
+
+}
+
+Assert
+// Object notation

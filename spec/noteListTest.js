@@ -7,7 +7,7 @@ function hasNotes() {
 
 function testAddNotes() {
   list.addNotes()
-  assert.isTrue(list.notes.length == 1)
+  assert.isTrue(list.notes.length === 1)
 }
 
 hasNotes()

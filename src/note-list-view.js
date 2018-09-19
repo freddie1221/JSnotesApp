@@ -5,7 +5,7 @@
     this.list = list
   }
   
-  NoteListView.prototype.dislayNotes = function() {
+  NoteListView.prototype.displayNotes = function() {
     var noteArray = this.list.notes
     var output = "<ul>"
     
@@ -17,6 +17,7 @@
   }
   
   exports.NoteListView = NoteListView
+  
 })(this)
 
 
