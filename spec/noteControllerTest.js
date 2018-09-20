@@ -20,7 +20,6 @@ var testController = new NoteController(listDouble, ListViewDouble)
 
 
 function canUpdateFrontEnd(){
-  console.log(testController.viewer.displayNotes())
   testController.updateFrontEnd(mockElement)
   assert.isTrue(mockElement.innerHTML === "example note")  
 }
