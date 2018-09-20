@@ -10,7 +10,8 @@
     var output = "<ul>"
     
     for (var i = 0; i < noteArray.length; i++) {
-      output += "<li><div>" + noteArray[i].text + "</div></li>"
+      var shortened = noteArray[i].text.substring(0,20)
+      output += "<li><div>" + shortened + "</div></li>"
     }
     output += "</ul>"
     return output
