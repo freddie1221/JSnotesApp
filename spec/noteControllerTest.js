@@ -4,9 +4,9 @@ ListDouble.prototype = {
   addNotes: function(){}
 }
 
-function ListViewDouble(){}
+function mockListView(){}
 
-ListViewDouble.prototype.displayNotes = function(){
+mockListView.prototype.displayNotes = function(){
   return "example note"
 }
 
@@ -14,8 +14,8 @@ var mockElement = {
   innerHTML: ""
 }
 
-var listDouble = new ListDouble()
-var testController = new NoteController(listDouble, ListViewDouble)
+var mockList = new ListDouble()
+var testController = new NoteController(mockList, mockListView)
 
 
 
