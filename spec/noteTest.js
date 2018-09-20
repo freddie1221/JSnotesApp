@@ -1,6 +1,7 @@
 
 var string = 'My favourite language is JavaScript'
-var testNote = new Note(string, 1)
+var id = 1
+var testNote = new Note(string, id)
 
 
 function hasText() {
@@ -12,3 +13,4 @@ function hasID() {
 }
 
 hasText()
+hasID()

@@ -10,8 +10,14 @@ function testAddNotes() {
   assert.isTrue(list.notes.length === 1)
 }
 
+function notesHaveUniqueID() {
+  list.addNotes('This is note 1')
+  list.addNotes('This is note 2')
+  assert.isTrue(list.notes[0].id != list.notes[1].id)
+}
+
 hasNotes()
 testAddNotes()
+notesHaveUniqueID()
 
-// this function takes as an argument a string 
-// that will be the value of the text property of the note e.g. "Favourite drink: seltzer".
+
