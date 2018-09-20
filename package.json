@@ -1,22 +1,22 @@
 {
   "name": "jsnotesapp",
   "version": "1.0.0",
-  "description": "JS notes app, Makers week 7",
+  "description": "Makers Week 7; Pure JS Notes App",
   "main": "index.js",
   "scripts": {
-    "test": "\"echo test\""
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/freddie1221/JSnotesApp.git"
   },
-  "author": "\"Freddie\"",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/freddie1221/JSnotesApp/issues"
   },
   "homepage": "https://github.com/freddie1221/JSnotesApp#readme",
-  "devDependencies": {
+  "dependencies": {
     "http-server": "^0.11.1"
   }
 }

@@ -14,25 +14,16 @@ var mockElement = {
   innerHTML: ""
 }
 
-
-// var listViewDouble = ListViewDouble()
 var listDouble = new ListDouble()
 var testController = new NoteController(listDouble, ListViewDouble)
 
 
-// function canAddNote(){
-//   assert.isTrue(testController.addNotes("example note"))
-// }
 
 function canUpdateFrontEnd(){
   console.log(testController.viewer.displayNotes())
-  
   testController.updateFrontEnd(mockElement)
-  assert.isTrue( mockElement.innerHTML === "example note")
-  
+  assert.isTrue(mockElement.innerHTML === "example note")  
 }
-
-
 
 
 function canBeInstantiated(){
