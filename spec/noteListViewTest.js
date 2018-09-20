@@ -4,7 +4,8 @@ list.addNotes("Less than 20 chars")
 var listView = new NoteListView(list)
 
 
-var expectedOutputText = "<ul><li><div>This is a note which</div></li><li><div>Less than 20 chars</div></li></ul>"
+var expectedOutputText = "<ul><li><div><a href='#notes/0'>This is a note which</a></div></li><li><div><a href='#notes/1'>Less than 20 chars</a></div></li></ul>"
+  
 
 function testDisplayNotes() {
   assert.isTrue(listView.displayNotes() === expectedOutputText)

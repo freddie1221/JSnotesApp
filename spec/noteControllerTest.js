@@ -1,6 +1,6 @@
-function ListDouble(){}
+function mockList(){}
 
-ListDouble.prototype = {
+mockList.prototype = {
   addNotes: function(){}
 }
 
@@ -14,9 +14,8 @@ var mockElement = {
   innerHTML: ""
 }
 
-var mockList = new ListDouble()
+var mockList = new mockList()
 var testController = new NoteController(mockList, mockListView)
-
 
 
 function canUpdateFrontEnd(){
