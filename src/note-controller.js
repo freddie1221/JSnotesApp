@@ -14,6 +14,10 @@
     element.innerHTML = this.viewer.displayNotes()
   }
 
+  NoteController.prototype.showFullNote = function(element, note){
+    element.innerHTML = this.viewer.displayNote(note)
+  }
+
 
 exports.NoteController = NoteController
 })(this)

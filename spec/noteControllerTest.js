@@ -10,6 +10,10 @@ mockListView.prototype.displayNotes = function(){
   return "example note"
 }
 
+mockListView.prototype.displayNote = function(){
+  return "Here is the full length note"
+}
+
 var mockElement = {
   innerHTML: ""
 }
@@ -24,10 +28,19 @@ function canUpdateFrontEnd(){
 }
 
 
+function canShowFullNote(){
+  testController.showFullNote(mockElement, 1)
+  assert.isTrue(mockElement.innerHTML === "Here is the full length note")  
+}
+
+
 function canBeInstantiated(){
   assert.isTrue(testController === testController)
 }
 
 
+
+
 canBeInstantiated()
 canUpdateFrontEnd()
+canShowFullNote()

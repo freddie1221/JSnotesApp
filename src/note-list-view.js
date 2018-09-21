@@ -9,7 +9,6 @@
     var noteArray = this.list.notes
     var output = "<ul>"
     
-//  OK so we want the note list view to be adding some HTML which references the ID of the note
 
     for (var i = 0; i < noteArray.length; i++) {
       var note = noteArray[i]
@@ -19,6 +18,26 @@
     output += `</ul>`
     return output
   }
+
+  NoteListView.prototype.displayNote = function(noteID) {
+    var noteArray = this.list.notes
+    var noteID = noteID
+    var output = "<ul><li><div>"
+
+    
+    var returnArray  = noteArray.filter(filterCondition)
+    var returnText = returnArray[0].text
+
+    function filterCondition(value) {
+      return value.id === noteID
+      debugger
+    }
+    output += `${returnText}</div></li></ul>`
+    return output
+  }
+
+  // I need to find out how to retreive an element from an array using a note ID
+  //array.filter perhaps. Not that clear to me how this method works. 
   
   exports.NoteListView = NoteListView
   
