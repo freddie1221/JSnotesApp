@@ -1,11 +1,11 @@
 
 (function(exports) {
 
-  function NoteListView(list) {
+  function NoteView(list) {
     this.list = list
   }
   
-  NoteListView.prototype.displayNotes = function() {
+  NoteView.prototype.displayNotes = function() {
     var noteArray = this.list.notes
     var output = "<ul>"
     
@@ -18,13 +18,13 @@
     return output
   }
 
-  NoteListView.prototype.displayNote = function(note) {
-    return `<div>` + this.note.text + `</div>`
+  NoteView.prototype.displayNote = function(note) {
+    return `<div>` + note.text + `</div>`
   }
 
 
   
-  exports.NoteListView = NoteListView
+  exports.NoteView = NoteView
   
 })(this)
 

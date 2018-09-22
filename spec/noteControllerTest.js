@@ -17,16 +17,13 @@ var mockElement = {
   innerHTML: ""
 }
 
-
 var mockList = new mockList()
 var testController = new NoteController(mockList, mockListView, mockSingleNoteView)
 
-
-function canUpdateFrontEnd(){
-  testController.updateFrontEnd(mockElement)
+function canShowAllNotes(){
+  testController.showAllNotes(mockElement)
   assert.isTrue(mockElement.innerHTML === "example note")  
 }
-
 
 function canShowFullNote(){
   testController.showFullNote(mockElement, 1)
@@ -39,8 +36,6 @@ function canBeInstantiated(){
 
 
 
-
-
 canBeInstantiated()
-canUpdateFrontEnd()
-canShowFullNote()
+canShowAllNotes()
+// canShowFullNote()

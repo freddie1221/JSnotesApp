@@ -10,8 +10,17 @@
   
 </head>
 <body>
+  <div id='header'>
+  </div>
   <div id='app'>
-    'Helloo'
+  </div>
+  <div>
+    
+        Add note: 
+        <input type="text" name="new_note">
+        <input type="button" onclick="controller.addNotes('new_note')" value="Submit">
+        <input type="button" onclick="controller.showAllNotes(app)" value="Update notes">
+    
   </div>
 </body>
 </html>
@@ -19,13 +28,14 @@
 <script src="src/note-model.js"></script>
 <script src="src/note-list-model.js"></script>
 <script src="src/note-controller.js"></script>
-<script src="src/note-list-view.js"></script>
-<script src="src/single-note-view.js"></script>
+<script src="src/note-view.js"></script>
+<!-- <script src="src/single-note-view.js"></script> -->
 
 <script>
     var app = document.getElementById("app")
     var controller = new NoteController()
     controller.addNotes('Hello this is longer than 20 characters')
     controller.addNotes('Goodbye')
-    controller.updateFrontEnd(app)
+    controller.showAllNotes(app)
+    controller.setEventListeners()
 </script>  

@@ -1,34 +1,38 @@
 
 (function (exports){
-  function NoteController(list = new List, listViewer = NoteListView, singleViewer = SingleNoteView){
+  function NoteController(list = new List, noteViewer = NoteView){
     this.list = list
-    this.listViewer = new listViewer(this.list)
-    // this.singleViewer = new singleViewer(this.list)
+    this.noteViewer = new noteViewer(this.list)
   }
 
-  var element = document.getElementById("app")
+  var element = document.getElementById("header")
   
   NoteController.prototype.setEventListeners = function() {
-    window.addEventListener("hashchange", showFullNote());
+    window.addEventListener("hashchange", this.execute.bind(this));
   };
-
+  
   NoteController.prototype.getNoteIdFromUrl = function() {
     return window.location.hash.split("/")[1]
+  }
+
+  NoteController.prototype.execute = function(){
+    var iD = parseInt(this.getNoteIdFromUrl(), 10)
+    var noteObject = this.list.returnNote(iD)
+    this.showFullNote(element, noteObject)
   }
 
   NoteController.prototype.addNotes = function(noteContent){
     this.list.addNotes(noteContent)
   }
   
-  NoteController.prototype.updateFrontEnd = function(element){
-    element.innerHTML = this.listViewer.displayNotes()
+  NoteController.prototype.showAllNotes = function(element){
+    element.innerHTML = this.noteViewer.displayNotes()
   }
 
   NoteController.prototype.showFullNote = function(element, note){
-    var singleViewer = new SingleNoteView(note)
-    element.innerHTML = this.singleViewer.displayNote(note)
+    element.innerHTML = this.noteViewer.displayNote(note)
   }
-  // This works :)
+  
 
 
 exports.NoteController = NoteController
