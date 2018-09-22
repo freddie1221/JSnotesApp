@@ -2,14 +2,22 @@
   
   function List() {
     this.notes = []
-    this.noteCounter = 0 
-    // would like a way to make this private
   }
+  
+  var noteCounter = 0
 
   List.prototype.addNotes = function(noteText) { 
-    note = new Note(noteText, this.noteCounter)
-    this.noteCounter += 1
+    note = new Note(noteText, noteCounter)
+    noteCounter += 1
     this.notes.push(note)
+  }
+
+  List.prototype.returnNote = function(noteId) {
+    var returnArray = this.notes.filter(filterCondition)
+    function filterCondition(value){
+        return value.id === noteId
+      }
+    return returnArray[0]
   }
 
   exports.List = List

@@ -1,25 +1,25 @@
 function mockList(){}
-
-mockList.prototype = {
-  addNotes: function(){}
-}
+  mockList.prototype = {
+    addNotes: function(){}
+  }
 
 function mockListView(){}
+  mockListView.prototype.displayNotes = function(){
+    return "example note"
+  }
 
-mockListView.prototype.displayNotes = function(){
-  return "example note"
-}
-
-mockListView.prototype.displayNote = function(){
-  return "Here is the full length note"
-}
+function mockSingleNoteView(){}
+  mockSingleNoteView.prototype.displayNote = function(){
+    return "Here is the full length note"
+  }
 
 var mockElement = {
   innerHTML: ""
 }
 
+
 var mockList = new mockList()
-var testController = new NoteController(mockList, mockListView)
+var testController = new NoteController(mockList, mockListView, mockSingleNoteView)
 
 
 function canUpdateFrontEnd(){
@@ -33,10 +33,10 @@ function canShowFullNote(){
   assert.isTrue(mockElement.innerHTML === "Here is the full length note")  
 }
 
-
 function canBeInstantiated(){
   assert.isTrue(testController === testController)
 }
+
 
 
 
